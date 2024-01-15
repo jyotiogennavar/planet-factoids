@@ -1,38 +1,41 @@
-.App {
-  text-align: center;
+@import url('https://fonts.googleapis.com/css2?family=Antonio&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;600&display=swap');
+
+
+:root {
+  /* colors */
+  --color-white : HSL(0°, 0%, 100%);
+  --color-neutral-100: HSL(240°, 6%, 54%);
+  --color-neutral-200: HSL(240°, 17%, 26%);
+  --color-neutral-300: HSL(240°, 67%, 8%);
+
+  --color-cyan: hsla(194, 48%, 49%, 1);
+  --color-yellow: hsla(33, 82%, 61%, 1);
+  --color-purple: hsla(263, 67%, 51%, 1);
+  --color-red-orange: hsla(10, 63%, 51%, 1);
+  --color-red: hsla(2, 68%, 53%, 1);
+  --color-orange: hsla(17, 73%, 46%, 1);
+  --color-light-green: hsla(169, 73%, 44%, 1);
+  --color-blue: hsla(222, 87%, 56%, 1);
+
+  /* fonts */
+  --font-family-heading: 'Antonio', sans-serif;;
+  --font-family-text: 'League Spartan', sans-serif;
+
+  --fs-100: 0.6875rem;
+  --fs-200: 0.875rem;
+  --fs-300: .75rem;
+  --fs-400: 2.5rem;
+  --fs-500: 5rem;
+
+  --fs-button: var(--fs-300);
+
+  --fw-400: 400;
+  --fs-700: 700;
+
+  --line-height: 1.5625rem;
+  
+
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}

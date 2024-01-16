@@ -115,3 +115,4 @@ This is where you can give a hat tip to anyone who helped you out on this projec
 Using this NPM package by Josh Comeau 
 
   https://www.npmjs.com/package/new-component 
+  command - new-component component-name

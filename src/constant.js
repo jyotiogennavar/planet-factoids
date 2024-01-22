@@ -24,8 +24,9 @@ export const FONT_SIZES = {
   100: '0.6875rem',
   200: '0.875rem',
   300: '0.75rem',
-  400: '2.5rem',
-  500: '5rem',
-  button: 'var(--fs-300)', // Assuming you want to reuse the button font size
+  400: '1.75rem',
+  500: '2.5rem',
+  600: '5rem',
+  button: 'var(--fs-300)', 
 };
 

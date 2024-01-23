@@ -1,3 +1,8 @@
+export const FONT_FAMILY = {
+  fontHeading: 'Antonio, sans-serif',
+  fontText: 'League Spartan, sans-serif',
+};
+
 export const COLORS = {
   white: 'hsl(0deg, 0%, 100%)',
   gray: {

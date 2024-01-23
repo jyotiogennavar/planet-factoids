@@ -1,18 +1,3 @@
-:root {
-
-  /* fonts */
-  --font-family-heading: 'Antonio', sans-serif;;
-  --font-family-text: 'League Spartan', sans-serif;
-
-
-  --fs-button: var(--fs-300);
-
-  --fw-400: 400;
-  --fw-700: 600;
-
-  --line-height: 1.5625rem;
-}
-
 /* CSS Reset - Josh w Comeau*/
 
 /*1. Use a more-intuitive box-sizing model.*/
@@ -49,4 +34,5 @@ p, h1, h2, h3, h4, h5, h6 { overflow-wrap: break-word;}
 
 body {
   background-color: hsl(240deg, 67%, 8%);
+  font-family: 'League Spartan', sans-serif;
 }

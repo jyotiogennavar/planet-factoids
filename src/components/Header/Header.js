@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { COLORS, WEIGHTS, FONT_SIZES } from '../../constant';
+import { COLORS, WEIGHTS, FONT_SIZES, FONT_FAMILY} from '../../constant';
 
 const planetNames = ['Mercury', 'Venus', 'Earth', 'Mars', 'Jupiter', 'Saturn', 'Uranus', 'Neptune'];
 
@@ -20,8 +20,7 @@ function Header() {
 }
 
 const Navbar = styled.div`
- padding: 1.6rem 2rem;
- 
+  padding: 1.6rem 2rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -29,7 +28,7 @@ const Navbar = styled.div`
 `
 
 const Logo = styled.p`
-font-family: 'Antonio', sans-serif;
+  font-family: ${FONT_FAMILY.fontHeading};
   font-size: ${FONT_SIZES[400]};
   color: ${COLORS.white};
   text-transform: uppercase;

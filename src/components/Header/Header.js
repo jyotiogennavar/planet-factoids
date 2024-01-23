@@ -50,6 +50,7 @@ const NavLink = styled.a`
   font-size: ${FONT_SIZES[200]};
 
   &:hover {
+    border-top: 1rem solid ${COLORS};
     color: ${COLORS.white};
   }
 `

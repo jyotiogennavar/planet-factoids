@@ -29,6 +29,7 @@ const ButtonWrapper = styled.button`
   cursor: pointer;
   background: none;
   transition: background-color 0.3s ease;
+  margin-bottom: 1rem;
 
   &:hover {
     background-color: ${COLORS.gray[200]};

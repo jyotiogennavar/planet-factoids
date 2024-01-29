@@ -5,15 +5,14 @@ import './App.css';
 import Footer from './components/Footer/Footer';
 import Header from './components/Header/Header';
 import MainBody from './components/MainBody/MainBody';
-import Mercury from './pages/mercury';
-import Venus from './pages/venus'
-import Earth from './pages/earth'
-import Mars from './pages/mars'
-import Jupiter from './pages/jupiter'
-import Saturn from './pages/saturn'
-import Neptune from './pages/neptune'
-import Uranus from './pages/uranus'
-
+import Mercury from './pages/mercury';  // Update the import statement
+import Venus from './pages/venus';
+import Earth from './pages/earth';
+import Mars from './pages/mars';
+import Jupiter from './pages/jupiter';
+import Saturn from './pages/saturn';
+import Neptune from './pages/neptune';
+import Uranus from './pages/uranus';
 
 function App() {
   return (
@@ -34,6 +33,5 @@ function App() {
     </Router>
   );
 }
-
 
 export default App;

@@ -1,22 +1,25 @@
+// Header.js
+
 import React from 'react';
 import styled from 'styled-components';
-import { COLORS, WEIGHTS, FONT_SIZES, FONT_FAMILY} from '../../constant';
+import { Link } from 'react-router-dom'; // Import Link from react-router-dom
+import { COLORS, WEIGHTS, FONT_SIZES, FONT_FAMILY } from '../../constant';
 
 const planetNames = ['Mercury', 'Venus', 'Earth', 'Mars', 'Jupiter', 'Saturn', 'Uranus', 'Neptune'];
 
 function Header() {
   return (
     <Navbar>
-      <Logo>The Planets</Logo>
+      <Logo to="/">The Planets</Logo>
       <Nav>
         {planetNames.map((planet) => (
-          <NavLink key={planet} href={`/${planet.toLowerCase()}`}>
+          <NavLink key={planet} to={`/${planet.toLowerCase()}`}>
             {planet}
           </NavLink>
         ))}
       </Nav>
     </Navbar>
-  )
+  );
 }
 
 const Navbar = styled.div`
@@ -25,23 +28,23 @@ const Navbar = styled.div`
   align-items: center;
   justify-content: space-between;
   border-bottom: 1px solid ${COLORS.gray[100]};
-`
+`;
 
-const Logo = styled.p`
+const Logo = styled(Link)`
   font-family: ${FONT_FAMILY.fontHeading};
   font-size: ${FONT_SIZES[400]};
   color: ${COLORS.white};
   text-transform: uppercase;
   font-weight: ${WEIGHTS.normal};
-`
+  text-decoration: none; // Add this line
+`;
 
 const Nav = styled.div`
   display: flex;
   gap: 2rem;
- 
-`
+`;
 
-const NavLink = styled.a`
+const NavLink = styled(Link)`
   font-family: 'League Spartan', sans-serif;
   text-transform: uppercase;
   text-decoration: none;
@@ -53,17 +56,6 @@ const NavLink = styled.a`
     border-top: 1rem solid ${COLORS};
     color: ${COLORS.white};
   }
-`
+`;
 
 export default Header;
-
-/* <Nav>
-<NavLink href='/mercury'>Mercury</NavLink>
-<NavLink href='/venus'>venus</NavLink>
-<NavLink href='/earth'>earth</NavLink>
-<NavLink href='/mars'>mars</NavLink>
-<NavLink href='/jupiter'>jupiter</NavLink>
-<NavLink href='/saturn'>saturn</NavLink>
-<NavLink href='/uranus'>uranus</NavLink>
-<NavLink href='/neptune'>neptune</NavLink>
-</Nav> */

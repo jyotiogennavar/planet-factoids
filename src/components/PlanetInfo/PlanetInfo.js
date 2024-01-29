@@ -1,14 +1,14 @@
 import React, {useState} from 'react';
 import styled from 'styled-components';
 import Button from '../Button/Button'; 
-import planetData from '../../data.json';
+import PlanetData from '../../data.json';
 
 import { COLORS, WEIGHTS, FONT_SIZES, FONT_FAMILY} from '../../constant';
 
 const PlanetInfo = () => {
   const [currentView, setCurrentView] = useState('overview');
 
-  const { name, overview, structure, geology } = planetData;
+  const { name, overview, structure, geology } = PlanetData;
 
   const renderContent = () => {
     switch (currentView) {
@@ -27,7 +27,12 @@ const PlanetInfo = () => {
 
   return (
     <StyledPlanetInfo>
-      <PlanetName>{name}</PlanetName>
+      {PlanetData.map( data => {
+        return (
+           <PlanetName>{data.mercury.name}</PlanetName>
+        )
+      })}
+     
       <PlanetContent>{content}</PlanetContent>
       <Link>
         Source : <WikiLink href={source}> Wikipedia</WikiLink>

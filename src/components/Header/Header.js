@@ -2,8 +2,12 @@
 
 import React from "react";
 import styled from "styled-components";
-import { Link } from "react-router-dom"; // Import Link from react-router-dom
+import { Link } from "react-router-dom"; 
 import { COLORS, WEIGHTS, FONT_SIZES, FONT_FAMILY } from "../../constant";
+
+
+import iconHamburger from 'assets/icon-hamburger.svg';
+
 
 const planetNames = [
   "Mercury",
@@ -45,7 +49,7 @@ const Logo = styled(Link)`
   color: ${COLORS.white};
   text-transform: uppercase;
   font-weight: ${WEIGHTS.normal};
-  text-decoration: none; // Add this line
+  text-decoration: none; 
 `;
 
 const Nav = styled.div`

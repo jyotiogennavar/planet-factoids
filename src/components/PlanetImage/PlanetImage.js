@@ -1,36 +1,31 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import { COLORS, WEIGHTS, FONT_SIZES, FONT_FAMILY} from '../../constant';
+// import { COLORS, WEIGHTS, FONT_SIZES, FONT_FAMILY} from '../../constant';
 
-const PlanetImage = ({ images, selectedImage }) => {
-  const getImageSrc = () => {
-    switch (selectedImage) {
-      case 'planet':
-        return images.planet;
-      case 'internal':
-        return images.internal;
-      case 'geology':
-        return images.geology;
-      default:
-        return '';
-    }
-  };
-
-  const imageSrc = getImageSrc();
-
-  if (!imageSrc) {
-    return <div>No image selected</div>;
-  }
+const PlanetImage = ({src, alt}) => {
 
   return (
-    <img
-      src={imageSrc}
-      alt={`${selectedImage} view of ${images.name}`}
-      style={{ width: '100%', maxWidth: '400px' }}
-    />
+    <ImgWrapper>
+     <img src={src} alt={alt}></img>
+    </ImgWrapper>
+   
   );
 };
 
+
+const ImgWrapper = styled.div`
+   /* border: 1px solid yellow; */
+   grid-area: planetImage;
+   margin: 1rem auto;
+
+   img {
+    margin: auto;
+    height: auto;
+    max-width: 100%;
+    padding-top: 10%;
+   }
+
+`
 
 export default PlanetImage;

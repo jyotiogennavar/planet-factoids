@@ -1,7 +1,7 @@
-import React from 'react';
-import styled from 'styled-components';
+import React from "react";
+import styled from "styled-components";
 
-import { COLORS, WEIGHTS, FONT_SIZES, FONT_FAMILY} from '../../constant';
+import { COLORS, WEIGHTS, FONT_SIZES, FONT_FAMILY } from "../../constant";
 
 function Button({ number, children, onClick, ...rest }) {
   return (
@@ -46,6 +46,4 @@ const ButtonNumber = styled.span`
   color: ${COLORS.gray[100]};
 `;
 
-
 export default Button;
-

@@ -1,11 +1,20 @@
 // Header.js
 
-import React from 'react';
-import styled from 'styled-components';
-import { Link } from 'react-router-dom'; // Import Link from react-router-dom
-import { COLORS, WEIGHTS, FONT_SIZES, FONT_FAMILY } from '../../constant';
+import React from "react";
+import styled from "styled-components";
+import { Link } from "react-router-dom"; // Import Link from react-router-dom
+import { COLORS, WEIGHTS, FONT_SIZES, FONT_FAMILY } from "../../constant";
 
-const planetNames = ['Mercury', 'Venus', 'Earth', 'Mars', 'Jupiter', 'Saturn', 'Uranus', 'Neptune'];
+const planetNames = [
+  "Mercury",
+  "Venus",
+  "Earth",
+  "Mars",
+  "Jupiter",
+  "Saturn",
+  "Uranus",
+  "Neptune",
+];
 
 function Header() {
   return (
@@ -45,7 +54,7 @@ const Nav = styled.div`
 `;
 
 const NavLink = styled(Link)`
-  font-family: 'League Spartan', sans-serif;
+  font-family: "League Spartan", sans-serif;
   text-transform: uppercase;
   text-decoration: none;
   color: ${COLORS.gray[100]};

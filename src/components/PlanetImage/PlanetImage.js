@@ -15,7 +15,6 @@ const PlanetImage = ({src, alt}) => {
 
 
 const ImgWrapper = styled.div`
-   /* border: 1px solid yellow; */
    grid-area: planetImage;
    margin: 1rem auto;
 

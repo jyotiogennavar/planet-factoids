@@ -1,26 +1,28 @@
 import React from "react";
 import styled from "styled-components";
+import PlanetData from "../../data.json";
 
 import { COLORS, WEIGHTS, FONT_SIZES, FONT_FAMILY } from "../../constant";
 
-const PlanetStats = () => {
+const PlanetStats = ( {rotation, revolution, radius, temperature}) => {
+
   return (
     <StyledPlanetStats>
       <StatWrapper>
         <StatName>ROTATION TIME</StatName>
-        <StatNum>58.6 days</StatNum>
+        <StatNum>{rotation}</StatNum>
       </StatWrapper>
       <StatWrapper>
         <StatName>REVOLUTION TIME</StatName>
-        <StatNum>87.97 days</StatNum>
+        <StatNum>{revolution}</StatNum>
       </StatWrapper>
       <StatWrapper>
         <StatName>radius</StatName>
-        <StatNum>2,439.7 km</StatNum>
+        <StatNum>{radius}</StatNum>
       </StatWrapper>
       <StatWrapper>
         <StatName>AVERAGE TEMP.</StatName>
-        <StatNum>430°c</StatNum>
+        <StatNum>{temperature}</StatNum>
       </StatWrapper>
     </StyledPlanetStats>
   );

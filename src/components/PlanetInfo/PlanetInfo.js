@@ -1,36 +1,19 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import Button from "../Button/Button";
-import PlanetData from "../../data.json";
+
 
 import { COLORS, WEIGHTS, FONT_SIZES, FONT_FAMILY } from "../../constant";
 
-const PlanetInfo = () => {
+const PlanetInfo = ({ name, overview, structure, geology }) => {
   const [currentView, setCurrentView] = useState("overview");
-
-  // const { name, overview, structure, geology } = PlanetData;
-
-  // const renderContent = () => {
-  //   switch (currentView) {
-  //     case "overview":
-  //       return overview;
-  //     case "structure":
-  //       return structure;
-  //     case "geology":
-  //       return geology;
-  //     default:
-  //       return overview; // Default to overview if the view is not recognized
-  //   }
-  // };
-
-  // const { content, source } = renderContent();
 
   return (
     <StyledPlanetInfo>
-
-      <PlanetContent>Mercury is the smallest planet in the Solar System and the closest to the Sun. Its orbit around the Sun takes 87.97 Earth days, the shortest of all the Sun's planets. Mercury is one of four terrestrial planets in the Solar System, and is a rocky body like Earth.</PlanetContent>
+      <PlanetName>{name}</PlanetName>
+      <PlanetContent>{overview.content}</PlanetContent>
       <Link> Wikipedia - 
-       <WikiLink href="https://en.wikipedia.org/wiki/Mercury_(planet)"></WikiLink>
+       <WikiLink href={overview.source}></WikiLink>
       </Link>
       <Button number="01" onClick={() => setCurrentView("overview")}>
         Overview

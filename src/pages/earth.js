@@ -12,14 +12,26 @@ import Header from "../components/Header/Header";
 import Footer from "../components/Footer/Footer";
 
 const Earth = () => {
+  const earthData = PlanetData.find((planet) => planet.name === "Earth");
+
   return (
     <>
     <Header/>
-    <PageLayout>
-      <PlanetImage src={'./assets/planet-mercury.svg'} alt={'mercury'}/>
-      <PlanetInfo/>
-      <PlanetStats/>
-    </PageLayout>
+        <PageLayout>
+        <PlanetImage src={earthData.images.planet} alt={"earth"} />
+        <PlanetInfo
+          name={earthData.name}
+          overview={earthData.overview}
+          structure={earthData.structure}
+          geology={earthData.geology}
+        />
+        <PlanetStats
+          rotation={earthData.rotation}
+          revolution={earthData.revolution}
+          radius={earthData.radius}
+          temperature={earthData.temperature}
+        />
+      </PageLayout>
     <Footer/>
     </>
   )

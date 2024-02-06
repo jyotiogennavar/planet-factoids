@@ -2,27 +2,60 @@ import React, { useState } from "react";
 import styled from "styled-components";
 import Button from "../Button/Button";
 
-
 import { COLORS, WEIGHTS, FONT_SIZES, FONT_FAMILY } from "../../constant";
 
-const PlanetInfo = ({ name, overview, structure, geology }) => {
+const PlanetInfo = ({ name, overview, structure, geology, onImageChange, images }) => {
   const [currentView, setCurrentView] = useState("overview");
+
+  const getContent = () => {
+    switch (currentView) {
+      case "overview":
+        return overview;
+      case "structure":
+        return structure;
+      case "geology":
+        return geology;
+      default:
+        return overview; // Default to overview if currentView is not recognized
+    }
+  };
+
+  const currentContent = getContent();
 
   return (
     <StyledPlanetInfo>
       <PlanetName>{name}</PlanetName>
-      <PlanetContent>{overview.content}</PlanetContent>
-      <Link> Wikipedia - 
-       <WikiLink href={overview.source}></WikiLink>
+      <PlanetContent>{currentContent.content}</PlanetContent>
+      <Link>
+        {" "}
+        Wikipedia -<WikiLink href={currentContent.source}></WikiLink>
       </Link>
-      <Button number="01" onClick={() => setCurrentView("overview")}>
+      <Button
+        number="01"
+        onClick={() => {
+          setCurrentView("overview");
+          onImageChange(images.planet);
+        }}
+      >
         Overview
       </Button>
-      <Button number="02" onClick={() => setCurrentView("structure")}>
-        Internal structure
+      <Button
+        number="02"
+        onClick={() => {
+          setCurrentView("structure");
+          onImageChange(images.internal); // Change the image to internal structure image when structure button is clicked
+        }}
+      >
+        Internal Structure
       </Button>
-      <Button number="03" onClick={() => setCurrentView("geology")}>
-        Surface geology
+      <Button
+        number="03"
+        onClick={() => {
+          setCurrentView("geology");
+          onImageChange(images.geology); // Change the image to geology image when geology button is clicked
+        }}
+      >
+        Surface Geology
       </Button>
     </StyledPlanetInfo>
   );

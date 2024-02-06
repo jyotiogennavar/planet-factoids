@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import PlanetData from "../data.json";
 
 import PlanetInfo from "../components/PlanetInfo";
@@ -11,17 +11,25 @@ import Footer from "../components/Footer/Footer";
 
 const Venus = () => {
   const venusData = PlanetData.find((planet) => planet.name === "Venus");
+  const [currentImage, setCurrentImage] = useState(venusData.images.planet);
+
+  const handleImageChange = (image) => {
+    setCurrentImage(image);
+  };
+
 
   return (
     <>
       <Header />
       <PageLayout>
-        <PlanetImage src={venusData.images.planet} alt={"venus"} />
+        <PlanetImage src={currentImage} alt={"venus"} />
         <PlanetInfo
           name={venusData.name}
           overview={venusData.overview}
           structure={venusData.structure}
           geology={venusData.geology}
+          onImageChange={handleImageChange} 
+          images={venusData.images}
         />
         <PlanetStats
           rotation={venusData.rotation}

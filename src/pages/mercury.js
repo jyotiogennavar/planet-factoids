@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import PlanetData from "../data.json";
 
 import PlanetInfo from "../components/PlanetInfo";
@@ -11,17 +11,24 @@ import Footer from "../components/Footer/Footer";
 
 const Mercury = () => {
   const mercuryData = PlanetData.find((planet) => planet.name === "Mercury");
+  const [currentImage, setCurrentImage] = useState(mercuryData.images.planet);
+
+  const handleImageChange = (image) => {
+    setCurrentImage(image);
+  };
 
   return (
     <>
       <Header />
       <PageLayout>
-        <PlanetImage src={mercuryData.images.planet} alt={"mercury"} />
-        <PlanetInfo 
-          name={mercuryData.name} 
-          overview={mercuryData.overview} 
+        <PlanetImage src={currentImage} alt={"mercury"} />
+        <PlanetInfo
+          name={mercuryData.name}
+          overview={mercuryData.overview}
           structure={mercuryData.structure}
           geology={mercuryData.geology}
+          onImageChange={handleImageChange} 
+          images={mercuryData.images}
         />
         <PlanetStats
           rotation={mercuryData.rotation}

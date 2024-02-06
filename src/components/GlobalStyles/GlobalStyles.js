@@ -69,6 +69,11 @@ table {
 html, body, #root {
   height: 100%;
 }
+
+body {
+  background-color: hsl(240deg, 67%, 8%);
+  font-family: 'League Spartan', sans-serif;
+}
 `;
 
 export default GlobalStyles;

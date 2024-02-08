@@ -4,7 +4,7 @@ import Button from "../Button/Button";
 
 import { COLORS, WEIGHTS, FONT_SIZES, FONT_FAMILY } from "../../constant";
 
-const PlanetInfo = ({ name, overview, structure, geology, onImageChange, images }) => {
+const PlanetInfo = ({ name, overview, structure, geology, onImageChange, images, focusColor }) => {
   const [currentView, setCurrentView] = useState("overview");
 
   const getContent = () => {
@@ -36,6 +36,7 @@ const PlanetInfo = ({ name, overview, structure, geology, onImageChange, images 
           setCurrentView("overview");
           onImageChange(images.planet);
         }}
+        focusColor={focusColor} 
       >
         Overview
       </Button>
@@ -45,6 +46,7 @@ const PlanetInfo = ({ name, overview, structure, geology, onImageChange, images 
           setCurrentView("structure");
           onImageChange(images.internal); // Change the image to internal structure image when structure button is clicked
         }}
+        focusColor={focusColor} 
       >
         Internal Structure
       </Button>
@@ -54,6 +56,7 @@ const PlanetInfo = ({ name, overview, structure, geology, onImageChange, images 
           setCurrentView("geology");
           onImageChange(images.geology); // Change the image to geology image when geology button is clicked
         }}
+        focusColor={focusColor} 
       >
         Surface Geology
       </Button>

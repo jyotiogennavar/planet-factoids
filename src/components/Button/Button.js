@@ -3,9 +3,9 @@ import styled from "styled-components";
 
 import { COLORS, WEIGHTS, FONT_SIZES, FONT_FAMILY } from "../../constant";
 
-function Button({ number, children, onClick, ...rest }) {
+function Button({ number, children, onClick, focusColor, ...rest }) {
   return (
-    <ButtonWrapper onClick={onClick} {...rest}>
+    <ButtonWrapper onClick={onClick} focusColor={focusColor} {...rest}>
       <ButtonNumber>{number}</ButtonNumber>
       {children}
     </ButtonWrapper>
@@ -36,7 +36,7 @@ const ButtonWrapper = styled.button`
   }
 
   &:focus {
-    background-color: ${COLORS.cyan};
+    background-color: ${props => props.focusColor};
   }
 `;
 

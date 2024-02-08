@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import PlanetData from "../data.json";
+import { COLORS } from "../constant";
 
 import PlanetInfo from "../components/PlanetInfo";
 import PlanetStats from "../components/PlanetStats";
@@ -12,6 +13,8 @@ import Footer from "../components/Footer/Footer";
 const Venus = () => {
   const venusData = PlanetData.find((planet) => planet.name === "Venus");
   const [currentImage, setCurrentImage] = useState(venusData.images.planet);
+  const focusColor = COLORS.yellow;
+
 
   const handleImageChange = (image) => {
     setCurrentImage(image);
@@ -20,7 +23,7 @@ const Venus = () => {
 
   return (
     <>
-      <Header />
+      <Header focusColor={focusColor}/>
       <PageLayout>
         <PlanetImage src={currentImage} alt={"venus"} />
         <PlanetInfo
@@ -30,6 +33,7 @@ const Venus = () => {
           geology={venusData.geology}
           onImageChange={handleImageChange} 
           images={venusData.images}
+          focusColor={focusColor}
         />
         <PlanetStats
           rotation={venusData.rotation}

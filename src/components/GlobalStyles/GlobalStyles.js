@@ -1,7 +1,5 @@
 import { createGlobalStyle } from 'styled-components';
 
-import backgroundStars from 'assets/background-stars.svg'
-
 const GlobalStyles = createGlobalStyle`
 /* http://meyerweb.com/eric/tools/css/reset/
    v2.0 | 20110126
@@ -74,7 +72,6 @@ html, body, #root {
 
 body {
   background-color: hsl(240deg, 67%, 8%);
-  background-image: url({backgroundStars});
   font-family: 'League Spartan', sans-serif;
 }
 `;
